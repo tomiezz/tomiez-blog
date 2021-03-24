@@ -1,0 +1,14 @@
+{
+  "compilerOptions": {
+    "noEmit": true,
+    "target": "ES6",
+    "module": "CommonJS",
+    "allowJs": true,
+    "jsx": "react",
+    "strict": true,
+    "removeComments": true,
+    "noImplicitReturns": true
+  },
+  "include": ["src/**/*"],
+  "exclude": ["node_modules", ".cache", "public"]
+}
