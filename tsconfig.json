@@ -7,7 +7,11 @@
     "jsx": "react",
     "strict": true,
     "removeComments": true,
-    "noImplicitReturns": true
+    "noImplicitReturns": true,
+    "esModuleInterop": true,
+    "noImplicitAny": false,
+    "baseUrl": "./src",
+    "lib": ["dom", "es5", "es6", "es7", "es2017"]
   },
   "include": ["src/**/*"],
   "exclude": ["node_modules", ".cache", "public"]
