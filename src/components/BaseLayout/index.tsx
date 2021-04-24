@@ -8,6 +8,7 @@ import { FiTwitter } from '@react-icons/all-files/fi/FiTwitter';
 
 import { FaFacebookF } from '@react-icons/all-files/fa/FaFacebookF';
 import AppMenu from 'components/AppMenu';
+import { CssBreakpoints } from 'utils/constant';
 
 import { Color } from 'style';
 import ProfileImage from '../../images/profile-image.jpg';
@@ -20,7 +21,7 @@ interface Props {
 
 const useStyles = createUseStyles({
   root: {
-    height: '100%',
+    minHeight: '100%',
     width: '100%',
     padding: 40,
   },
@@ -29,6 +30,7 @@ const useStyles = createUseStyles({
     maxWidth: 1264,
     margin: '0 auto',
     borderRadius: 10,
+    minHeight: '100%',
   },
   sidebar: {
     padding: 20,
@@ -68,7 +70,24 @@ const useStyles = createUseStyles({
   },
   contentWrap: {
     padding: 20,
+    minHeight: '100%',
+    height: '100%',
   },
+  divImg: {
+    paddingTop: '100%',
+    width: '100%',
+    backgroundSize: 'cover',
+    backgroundPosition: 'center',
+    borderRadius: 10,
+  },
+  divImgWrap: {
+    padding: '10%',
+  },
+  // [`@media (max-width: ${CssBreakpoints.SM}px)`]: {
+  //   sidebar: {
+  //     display: 'none',
+  //   },
+  // },
 });
 
 function BaseLayout(props: Props) {
@@ -79,9 +98,17 @@ function BaseLayout(props: Props) {
     <div className={classes.root}>
       <div className={classes.wrapper}>
         <Row>
-          <Col lg={6}>
+          <Col lg={6} sm={0} xs={0}>
             <div className={classes.sidebar}>
-              <Image className={classes.profileImage} src={ProfileImage} />
+              <div className={classes.divImgWrap}>
+                <div
+                  className={classes.divImg}
+                  style={{
+                    backgroundImage: `url(${ProfileImage})`,
+                  }}
+                />
+              </div>
+
               <Title className={classes.name} level={3}>
                 Tomiez
               </Title>
@@ -104,7 +131,7 @@ function BaseLayout(props: Props) {
               </div>
             </div>
           </Col>
-          <Col lg={18}>
+          <Col lg={18} sm={24}>
             <div className={classes.contentWrap}>
               <div>
                 <AppMenu />
@@ -113,7 +140,6 @@ function BaseLayout(props: Props) {
             </div>
           </Col>
         </Row>
-        {children}
       </div>
     </div>
   );

@@ -1,6 +1,6 @@
 import { Menu } from 'antd';
 import { Link } from 'gatsby';
-import React from 'react';
+import React, { useState } from 'react';
 import { BsPencil } from '@react-icons/all-files/bs/BsPencil';
 import { BsPerson } from '@react-icons/all-files/bs/BsPerson';
 import { BsTag } from '@react-icons/all-files/bs/BsTag';
@@ -47,7 +47,11 @@ const useStyles = createUseStyles({
 function AppMenu() {
   const classes = useStyles();
   return (
-    <Menu mode="horizontal" className={classes.menu}>
+    <Menu
+      mode="horizontal"
+      className={classes.menu}
+      // selectedKeys={[selectedKey]}
+    >
       {menuArr.map(menuItem => (
         <Menu.Item
           className={classes.menuItem}

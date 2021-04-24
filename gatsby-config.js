@@ -24,7 +24,28 @@ module.exports = {
         path: `${__dirname}/content`,
       },
     },
-    `gatsby-transformer-remark`,
+    {
+      resolve: `gatsby-transformer-remark`,
+      options: {
+        plugins: [
+          {
+            resolve: 'gatsby-remark-images',
+            options: {
+              maxWidth: 1000,
+              quality: 80,
+              showCaptions: true,
+              linkImagesToOriginal: false,
+            },
+          },
+        ],
+      },
+    },
+    {
+      resolve: `gatsby-plugin-graphql-codegen`,
+      options: {
+        codegen: false,
+      },
+    },
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
     {

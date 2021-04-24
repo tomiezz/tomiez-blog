@@ -13,11 +13,8 @@ const useStyles = createUseStyles({
   },
 });
 
-const IndexPage = props => {
+const AboutPage = () => {
   const classes = useStyles();
-  React.useEffect(() => {
-    console.log('CURRENT PROPS: ', props);
-  }, []);
   return (
     <BaseLayout>
       <SEO title="Home" />
@@ -26,4 +23,4 @@ const IndexPage = props => {
   );
 };
 
-export default IndexPage;
+export default AboutPage;
