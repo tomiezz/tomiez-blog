@@ -8,10 +8,12 @@ import { FiTwitter } from '@react-icons/all-files/fi/FiTwitter';
 
 import { FaFacebookF } from '@react-icons/all-files/fa/FaFacebookF';
 import AppMenu from 'components/AppMenu';
+import AppMenuMb from 'components/AppMenuMb';
+
 import { CssBreakpoints } from 'utils/constant';
 
 import { Color } from 'style';
-import ProfileImage from '../../images/profile-image.jpg';
+import ProfileImage from 'images/profile-image.png';
 
 const { Title } = Typography;
 
@@ -23,7 +25,7 @@ const useStyles = createUseStyles({
   root: {
     minHeight: '100%',
     width: '100%',
-    padding: 40,
+    padding: 15,
   },
   wrapper: {
     background: Color.WHITE,
@@ -36,11 +38,10 @@ const useStyles = createUseStyles({
     padding: 20,
   },
   profileImage: {
-    borderRadius: 10,
+    borderRadius: '15%',
   },
   name: {
     textAlign: 'center',
-    margin: '20px 0',
   },
   lableWrap: {
     display: 'flex',
@@ -70,6 +71,7 @@ const useStyles = createUseStyles({
   },
   contentWrap: {
     padding: 20,
+    width: '100%',
     minHeight: '100%',
     height: '100%',
   },
@@ -82,12 +84,13 @@ const useStyles = createUseStyles({
   },
   divImgWrap: {
     padding: '10%',
+    paddingTop: 0,
   },
-  // [`@media (max-width: ${CssBreakpoints.SM}px)`]: {
-  //   sidebar: {
-  //     display: 'none',
-  //   },
-  // },
+  [`@media (min-width: ${CssBreakpoints.MD}px)`]: {
+    root: {
+      padding: 40,
+    },
+  },
 });
 
 function BaseLayout(props: Props) {
@@ -131,11 +134,16 @@ function BaseLayout(props: Props) {
               </div>
             </div>
           </Col>
-          <Col lg={18} sm={24}>
+          <Col lg={18} sm={24} xs={24}>
             <div className={classes.contentWrap}>
-              <div>
-                <AppMenu />
-              </div>
+              <Row>
+                <Col lg={24} xs={0}>
+                  <AppMenu />
+                </Col>
+                <Col lg={0} xs={24}>
+                  <AppMenuMb />
+                </Col>
+              </Row>
               {children}
             </div>
           </Col>
