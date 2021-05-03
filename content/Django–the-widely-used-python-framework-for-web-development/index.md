@@ -1,5 +1,6 @@
 ---
 title: Django – The widely used python framework for web development
+type: blog
 tags: [python, html, css]
 date: 2019-01-07T05:25:44.226Z
 slug: blog/django-the-widely-used-python-framework-for-web-development

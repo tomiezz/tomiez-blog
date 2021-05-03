@@ -8,7 +8,6 @@ const { Title } = Typography;
 
 const useStyles = createUseStyles(() => ({
   wrapper: {},
-
   divImg: {
     width: '100%',
     paddingTop: '56.25%',

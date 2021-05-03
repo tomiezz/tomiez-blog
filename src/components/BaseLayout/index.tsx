@@ -1,11 +1,11 @@
-import { Col, Row, Image, Typography } from 'antd';
+import { Col, Row, Image, Typography, Affix, BackTop } from 'antd';
 import React from 'react';
 import { createUseStyles } from 'react-jss';
 import { BiCalendarAlt } from '@react-icons/all-files/bi/BiCalendarAlt';
 import { GoLocation } from '@react-icons/all-files/go/GoLocation';
 import { AiOutlineGithub } from '@react-icons/all-files/ai/AiOutlineGithub';
 import { FiTwitter } from '@react-icons/all-files/fi/FiTwitter';
-
+import { BsArrowUp } from '@react-icons/all-files/bs/BsArrowUp';
 import { FaFacebookF } from '@react-icons/all-files/fa/FaFacebookF';
 import AppMenu from 'components/AppMenu';
 import AppMenuMb from 'components/AppMenuMb';
@@ -52,10 +52,16 @@ const useStyles = createUseStyles({
     backgroundColor: Color.GRAY_200,
     borderRadius: '50px',
   },
+  infoWrapper: {
+    display: 'flex',
+    justifyContent: 'center',
+  },
+  infoGroup: {
+    display: 'inline-block',
+  },
   infoRow: {
     display: 'flex',
     alignItems: 'center',
-    justifyContent: 'center',
     margin: '15px 0',
     '& > svg': {
       marginRight: 10,
@@ -86,6 +92,17 @@ const useStyles = createUseStyles({
     padding: '10%',
     paddingTop: 0,
   },
+  backTop: {
+    padding: 5,
+    background: 'rgba(4,145,254,0.3)',
+    display: 'inline-flex',
+    justifyContent: 'center',
+    alignItems: 'center',
+    borderRadius: '50%',
+  },
+  backTopIcon: {
+    fontSize: 20,
+  },
   [`@media (min-width: ${CssBreakpoints.MD}px)`]: {
     root: {
       padding: 40,
@@ -102,46 +119,56 @@ function BaseLayout(props: Props) {
       <div className={classes.wrapper}>
         <Row>
           <Col lg={6} sm={0} xs={0}>
-            <div className={classes.sidebar}>
-              <div className={classes.divImgWrap}>
-                <div
-                  className={classes.divImg}
-                  style={{
-                    backgroundImage: `url(${ProfileImage})`,
-                  }}
-                />
-              </div>
+            <Affix offsetTop={0}>
+              <div className={classes.sidebar}>
+                <div className={classes.divImgWrap}>
+                  <div
+                    className={classes.divImg}
+                    style={{
+                      backgroundImage: `url(${ProfileImage})`,
+                    }}
+                  />
+                </div>
 
-              <Title className={classes.name} level={3}>
-                Tomiez
-              </Title>
-              <div className={classes.lableWrap}>
-                <div className={classes.label}>Software engineer</div>
-              </div>
-              <div className={classes.socialWrap}>
-                <div>
-                  <AiOutlineGithub size={20} />
-                  <FaFacebookF size={20} />
-                  <FiTwitter size={20} />
+                <Title className={classes.name} level={3}>
+                  Tomiez
+                </Title>
+                <div className={classes.infoWrapper}>
+                  <div className={classes.infoGroup}>
+                    <div className={classes.lableWrap}>
+                      <div className={classes.label}>Software engineer</div>
+                    </div>
+                    <div className={classes.socialWrap}>
+                      <div>
+                        <AiOutlineGithub size={20} />
+                        <FaFacebookF size={20} />
+                        <FiTwitter size={20} />
+                      </div>
+                    </div>
+                    <div className={classes.infoRow}>
+                      <BiCalendarAlt size={24} /> Jun 6,1996
+                    </div>
+                    <div className={classes.infoRow}>
+                      <GoLocation size={24} />
+                      Hanoi, Vietnam
+                    </div>
+                  </div>
                 </div>
               </div>
-              <div className={classes.infoRow}>
-                <BiCalendarAlt size={24} /> Jun 6,1996
-              </div>
-              <div className={classes.infoRow}>
-                <GoLocation size={24} />
-                Hanoi, Vietnam
-              </div>
-            </div>
+            </Affix>
           </Col>
           <Col lg={18} sm={24} xs={24}>
             <div className={classes.contentWrap}>
               <Row>
                 <Col lg={24} xs={0}>
-                  <AppMenu />
+                  <Affix offsetTop={0}>
+                    <AppMenu />
+                  </Affix>
                 </Col>
                 <Col lg={0} xs={24}>
-                  <AppMenuMb />
+                  <Affix offsetTop={0}>
+                    <AppMenuMb />
+                  </Affix>
                 </Col>
               </Row>
               {children}
@@ -149,6 +176,11 @@ function BaseLayout(props: Props) {
           </Col>
         </Row>
       </div>
+      <BackTop>
+        <div className={classes.backTop}>
+          <BsArrowUp className={classes.backTopIcon} />
+        </div>
+      </BackTop>
     </div>
   );
 }

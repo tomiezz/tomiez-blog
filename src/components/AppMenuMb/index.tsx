@@ -1,38 +1,15 @@
 import { Button, Divider, Menu, Popover } from 'antd';
 import { Link } from 'gatsby';
 import React, { useState } from 'react';
-import { BsPencil } from '@react-icons/all-files/bs/BsPencil';
-import { BsPerson } from '@react-icons/all-files/bs/BsPerson';
 import { HiMenuAlt3 } from '@react-icons/all-files/hi/HiMenuAlt3';
 import { BsTag } from '@react-icons/all-files/bs/BsTag';
 import { GiConvergenceTarget } from '@react-icons/all-files/gi/GiConvergenceTarget';
+import VerticalMenu from 'components/VerticalMenu';
+
 import { createUseStyles } from 'react-jss';
 import { AppRoute } from 'utils/constant';
 import ProfileImage from 'images/profile-image.png';
 import { TypeAppMenu } from './types';
-
-const menuArr: TypeAppMenu[] = [
-  {
-    title: 'About',
-    link: AppRoute.HOME_PAGE,
-    icon: <BsPerson size={20} />,
-  },
-  {
-    title: 'Blog',
-    link: AppRoute.BLOG_PAGE,
-    icon: <BsPencil size={20} />,
-  },
-  {
-    title: 'Tags',
-    link: AppRoute.TAGS_PAGE,
-    icon: <BsTag size={20} />,
-  },
-  {
-    title: 'My service',
-    link: AppRoute.SERVICE_PAGE,
-    icon: <GiConvergenceTarget size={20} />,
-  },
-];
 
 const useStyles = createUseStyles({
   wrapper: {},
@@ -40,12 +17,18 @@ const useStyles = createUseStyles({
     display: 'flex',
     justifyContent: 'space-between',
     alignItems: 'center',
+    padding: '10px 0',
+    background: 'white',
   },
   divImg: {
     width: 50,
     height: 50,
     backgroundSize: 'cover',
     borderRadius: '15%',
+  },
+  divider: {
+    margin: 0,
+    marginBottom: 15,
   },
 });
 
@@ -57,12 +40,6 @@ function AppMenuMb() {
     setOpenMenu(prev => !prev);
   };
 
-  const content = menuArr.map(item => (
-    <div style={{ textAlign: 'center', margin: '10px 0' }} key={item.title}>
-      <Link to={item.link}> {item.title}</Link>
-    </div>
-  ));
-
   return (
     <div className={classes.wrapper}>
       <div className={classes.main}>
@@ -72,7 +49,11 @@ function AppMenuMb() {
             backgroundImage: `url(${ProfileImage})`,
           }}
         />
-        <Popover placement="bottomRight" content={content} trigger="click">
+        <Popover
+          placement="bottomRight"
+          content={<VerticalMenu />}
+          trigger="click"
+        >
           <Button
             type="text"
             icon={<HiMenuAlt3 size={28} />}
@@ -81,7 +62,7 @@ function AppMenuMb() {
         </Popover>
       </div>
 
-      <Divider dashed />
+      <Divider dashed className={classes.divider} />
     </div>
   );
 }

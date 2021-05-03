@@ -6,6 +6,7 @@ import { createUseStyles } from 'react-jss';
 import BaseLayout from 'components/BaseLayout';
 import SEO from 'components/Seo';
 import ComingSoon from 'components/ComingSoon';
+import PageLayout from 'components/PageLayout';
 
 const useStyles = createUseStyles({
   comingSoonWrap: {
@@ -18,7 +19,9 @@ const TagPage = () => {
   return (
     <BaseLayout>
       <SEO title="Home" />
-      <ComingSoon className={classes.comingSoonWrap} />
+      <PageLayout title="Tags">
+        <div />
+      </PageLayout>
     </BaseLayout>
   );
 };
