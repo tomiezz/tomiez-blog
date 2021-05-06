@@ -7,7 +7,7 @@ slug: /about-data
 
 Rất vui khi bạn đã ghé thăm blog của Tomiez !
 
-Mình là một lập trình viên đã có vài năm kinh nghiệm trong lĩnh vực lập trình. Với mong muốn chia sẻ kiến thức đã ấp ủ từ hồi còn đi học, mình đã lấy hết can đảm để tạo ra blog này.
+Mình là một lập trình viên đã có vài năm kinh nghiệm trong lĩnh vực lập trình. Với mong muốn chia sẻ kiến thức đã ấp ủ từ hồi còn đi học, mình đã dành tâm huyết để tạo ra blog này.
 
 Những chia sẻ của mình dựa trên những tìm hiểu và kinh nghiệm thực tế khi tham gia các dự án, cũng như là những case study mà mình đã được biết. Qua đó nhằm giúp các bạn khi theo dõi blog của mình sẽ có thêm những kiến thức mới, giải quyết tốt hơn những vấn đề gặp phải trong quá trình làm việc (Nhất là đối với những bạn đã có kinh nghiệm từ 6 tháng đến 1 năm).
 

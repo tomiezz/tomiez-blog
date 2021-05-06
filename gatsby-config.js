@@ -5,11 +5,15 @@ module.exports = {
     title: `Tomiez's blog`,
     description: `It's all about tomiez's insight`,
     author: `@tomiez`,
+    siteUrl: `https://www.tomiez.com`,
   },
-
+  flags: {
+    DEV_SSR: true,
+  },
   plugins: [
     `gatsby-plugin-react-helmet`,
     `gatsby-plugin-image`,
+
     {
       resolve: `gatsby-source-filesystem`,
       options: {
@@ -23,6 +27,13 @@ module.exports = {
         name: `markdown-pages`,
         path: `${__dirname}/content`,
       },
+    },
+    {
+      resolve: `gatsby-plugin-advanced-sitemap`,
+    },
+    {
+      resolve: `gatsby-plugin-jss`,
+      options: {},
     },
     {
       resolve: `gatsby-transformer-remark`,

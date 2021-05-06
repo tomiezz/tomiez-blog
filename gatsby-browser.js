@@ -12,4 +12,4 @@ const WrappageElement = ({ element, props }) => {
   return <RootLayout {...props}>{element}</RootLayout>;
 };
 
-exports.wrapPageElement = WrappageElement;
+exports.wrapRootElement = WrappageElement;

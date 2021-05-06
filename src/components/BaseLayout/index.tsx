@@ -17,6 +17,24 @@ import ProfileImage from 'images/profile-image.png';
 
 const { Title } = Typography;
 
+const useGlobalStyle = createUseStyles({
+  '@global': {
+    html: {
+      height: '100%',
+      width: '100%',
+    },
+    body: {
+      height: '100%',
+      background: Color.LIGHT_BASE_BACKGROUND,
+    },
+    '#___gatsby': {
+      height: '100%',
+    },
+    '#gatsby-focus-wrapper': {
+      height: '100%',
+    },
+  },
+});
 interface Props {
   children: React.ReactNode | React.ReactNodeArray;
 }
@@ -113,7 +131,7 @@ const useStyles = createUseStyles({
 function BaseLayout(props: Props) {
   const { children } = props;
   const classes = useStyles();
-
+  useGlobalStyle();
   return (
     <div className={classes.root}>
       <div className={classes.wrapper}>

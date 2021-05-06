@@ -26,11 +26,7 @@ const useGlobalStyle = createUseStyles({
 function RootLayout(props) {
   const { children } = props;
   useGlobalStyle();
-  return (
-    <JssProvider>
-      <ThemeProvider theme={rootTheme}>{children}</ThemeProvider>
-    </JssProvider>
-  );
+  return <ThemeProvider theme={rootTheme}>{children}</ThemeProvider>;
 }
 
 export default RootLayout;
