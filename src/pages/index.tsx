@@ -22,7 +22,7 @@ const IndexPage = ({ data }) => {
 
   return (
     <BaseLayout>
-      <SEO title="Home" />
+      <SEO title="Homepage" description="Homepage of tomiez.com" />
       <PageLayout title="About">
         <div
           dangerouslySetInnerHTML={{

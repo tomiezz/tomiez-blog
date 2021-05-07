@@ -18,7 +18,7 @@ const MyServicePage = () => {
   const classes = useStyles();
   return (
     <BaseLayout>
-      <SEO title="Home" />
+      <SEO title="My services" description="My services page of tomiez.com" />
       <PageLayout title="My services">
         <div />
       </PageLayout>

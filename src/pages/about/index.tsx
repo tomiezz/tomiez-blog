@@ -17,7 +17,7 @@ const AboutPage = () => {
   const classes = useStyles();
   return (
     <BaseLayout>
-      <SEO title="Home" />
+      <SEO title="About" description="About page of tomiez.com" />
       <ComingSoon className={classes.comingSoonWrap} />
     </BaseLayout>
   );

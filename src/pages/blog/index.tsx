@@ -17,7 +17,7 @@ function Blog({ data }) {
   const classes = useStyles();
   return (
     <BaseLayout>
-      <SEO title="Home" />
+      <SEO title="Blog" description="Blog page of tomiez.com" />
       <PageLayout title="Blog">
         <div className={classes.wrapper}>
           <Row gutter={[16, 32]}>

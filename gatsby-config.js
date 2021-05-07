@@ -1,12 +1,8 @@
 const path = require('path');
+const siteMetaData = require('./site-metadata');
 
 module.exports = {
-  siteMetadata: {
-    title: `Tomiez's blog`,
-    description: `It's all about tomiez's insight`,
-    author: `@tomiez`,
-    siteUrl: `https://www.tomiez.com`,
-  },
+  siteMetadata: siteMetaData,
   flags: {
     DEV_SSR: true,
   },
@@ -54,7 +50,7 @@ module.exports = {
     {
       resolve: `gatsby-plugin-graphql-codegen`,
       options: {
-        codegen: false,
+        codegen: true,
       },
     },
     `gatsby-transformer-sharp`,

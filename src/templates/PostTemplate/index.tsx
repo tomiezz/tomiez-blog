@@ -1,11 +1,19 @@
+import { Image, Typography } from 'antd';
 import BaseLayout from 'components/BaseLayout';
+import SEO from 'components/Seo';
 import { graphql } from 'gatsby';
 import React from 'react';
 import { createUseStyles } from 'react-jss';
+import { CssBreakpoints } from 'utils/constant';
 
 const useStyles = createUseStyles(() => ({
   wrapper: {
-    padding: '30px 0',
+    padding: 0,
+  },
+  [`@media (min-width: ${CssBreakpoints.MD}px)`]: {
+    wrapper: {
+      padding: '30px 0',
+    },
   },
 }));
 
@@ -18,9 +26,19 @@ export default function PostTemplate({ data, ...rest }) {
   }, []);
   return (
     <BaseLayout>
+      <SEO
+        title={frontmatter.title}
+        description={frontmatter.excerpt}
+        article
+        image={frontmatter.cover.childImageSharp.fluid.src}
+      />
       <div className={classes.wrapper}>
-        {frontmatter.title}
-
+        <Typography.Title level={3}>{frontmatter.title}</Typography.Title>
+        <Image
+          alt="ok ok"
+          src={frontmatter.cover.childImageSharp.fluid.src}
+          title="ok ok"
+        />
         {html && (
           <div
             className="blog-post-content"
@@ -40,6 +58,13 @@ export const pageQuery = graphql`
         date(formatString: "MMMM DD, YYYY")
         slug
         title
+        cover {
+          childImageSharp {
+            fluid {
+              src
+            }
+          }
+        }
       }
     }
   }
