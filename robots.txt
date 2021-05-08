@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+Sitemap: https://tomiez.com/sitemap.xml
+Host: https://tomiez.com
