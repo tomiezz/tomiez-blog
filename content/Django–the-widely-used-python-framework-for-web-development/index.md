@@ -5,6 +5,10 @@ tags: [python, html, css]
 date: 2019-01-07T05:25:44.226Z
 slug: blog/django-the-widely-used-python-framework-for-web-development
 cover: ./django.png
+keyword: ['a', 'b', 'c']
+datePublished: 'string'
+dateCreated: 'string'
+dateModified: 'string'
 excerpt: Django is a widely used python framework for web development. Learn what makes django so popular for backend development and why many startups and Tech giants prefer Django.
 ---
 

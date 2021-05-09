@@ -3,6 +3,7 @@ id: 1
 type: about
 title: About
 slug: /about-data
+cover: ./django.png
 ---
 
 Rất vui khi bạn đã ghé thăm blog của Tomiez !

@@ -7,30 +7,8 @@ module.exports = {
     DEV_SSR: true,
   },
   plugins: [
-    `gatsby-plugin-react-helmet`,
-    `gatsby-plugin-image`,
-
-    {
-      resolve: `gatsby-source-filesystem`,
-      options: {
-        name: `images`,
-        path: `${__dirname}/src/images`,
-      },
-    },
-    {
-      resolve: `gatsby-source-filesystem`,
-      options: {
-        name: `markdown-pages`,
-        path: `${__dirname}/content`,
-      },
-    },
-    {
-      resolve: `gatsby-plugin-advanced-sitemap`,
-    },
-    {
-      resolve: `gatsby-plugin-jss`,
-      options: {},
-    },
+    `gatsby-plugin-sharp`,
+    `gatsby-transformer-sharp`,
     {
       resolve: `gatsby-transformer-remark`,
       options: {
@@ -48,13 +26,37 @@ module.exports = {
       },
     },
     {
-      resolve: `gatsby-plugin-graphql-codegen`,
+      resolve: `gatsby-source-filesystem`,
       options: {
-        codegen: true,
+        name: `markdown-pages`,
+        path: `${__dirname}/content`,
       },
     },
-    `gatsby-transformer-sharp`,
-    `gatsby-plugin-sharp`,
+    `gatsby-plugin-image`,
+    `gatsby-plugin-react-helmet`,
+    {
+      resolve: 'gatsby-plugin-robots-txt',
+      options: {
+        host: siteMetaData.siteUrl,
+        sitemap: `${siteMetaData.siteUrl}/sitemap.xml`,
+        policy: [{ userAgent: '*', allow: '/' }],
+      },
+    },
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        name: `images`,
+        path: `${__dirname}/src/images`,
+      },
+    },
+    {
+      resolve: `gatsby-plugin-advanced-sitemap`,
+    },
+    {
+      resolve: `gatsby-plugin-jss`,
+      options: {},
+    },
+
     {
       resolve: `gatsby-plugin-manifest`,
       options: {

@@ -12,12 +12,15 @@ const useStyles = createUseStyles(() => ({
   wrapper: {},
 }));
 
+const title = 'Blog';
+const description = 'Blog page of tomiez.com';
+
 function Blog({ data }) {
   const { allMarkdownRemark }: MyBlogQuery = data;
   const classes = useStyles();
   return (
     <BaseLayout>
-      <SEO title="Blog" description="Blog page of tomiez.com" />
+      <SEO title={title} description={description} />
       <PageLayout title="Blog">
         <div className={classes.wrapper}>
           <Row gutter={[16, 32]}>

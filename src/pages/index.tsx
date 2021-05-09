@@ -7,6 +7,10 @@ import BaseLayout from 'components/BaseLayout';
 import SEO from 'components/Seo';
 import ComingSoon from 'components/ComingSoon';
 import PageLayout from 'components/PageLayout';
+import {
+  getHomepageBreadcrumbSchema,
+  getWebsiteJsonSchema,
+} from 'utils/json-ld';
 
 const useStyles = createUseStyles({
   comingSoonWrap: {
@@ -14,15 +18,25 @@ const useStyles = createUseStyles({
   },
 });
 
+const title = 'Homepage';
+const description = 'Homepage of tomiez.com';
+
 const IndexPage = ({ data }) => {
   const classes = useStyles();
   const { allMarkdownRemark } = data;
 
-  console.log('MARKDOWN: ', allMarkdownRemark);
+  const homepageJsonSchema = JSON.stringify([
+    getWebsiteJsonSchema(title),
+    getHomepageBreadcrumbSchema(),
+  ]);
 
   return (
     <BaseLayout>
-      <SEO title="Homepage" description="Homepage of tomiez.com" />
+      <SEO
+        title={title}
+        description={description}
+        jsonLD={homepageJsonSchema}
+      />
       <PageLayout title="About">
         <div
           dangerouslySetInnerHTML={{

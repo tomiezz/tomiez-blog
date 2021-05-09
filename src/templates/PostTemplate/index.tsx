@@ -21,22 +21,20 @@ export default function PostTemplate({ data, ...rest }) {
   const { markdownRemark } = data; // data.markdownRemark holds your post data
   const { frontmatter, html } = markdownRemark;
   const classes = useStyles();
-  React.useEffect(() => {
-    console.log('CURRENT PROPS: ', rest);
-  }, []);
+
   return (
     <BaseLayout>
       <SEO
         title={frontmatter.title}
         description={frontmatter.excerpt}
         article
-        image={frontmatter.cover.childImageSharp.fluid.src}
+        image={{ url: frontmatter.cover?.childImageSharp?.fluid?.src }}
       />
       <div className={classes.wrapper}>
         <Typography.Title level={3}>{frontmatter.title}</Typography.Title>
         <Image
           alt="ok ok"
-          src={frontmatter.cover.childImageSharp.fluid.src}
+          src={frontmatter.cover?.childImageSharp?.fluid?.src}
           title="ok ok"
         />
         {html && (
@@ -66,6 +64,7 @@ export const pageQuery = graphql`
           }
         }
       }
+      excerpt(pruneLength: 160)
     }
   }
 `;

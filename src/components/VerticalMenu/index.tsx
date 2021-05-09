@@ -13,22 +13,22 @@ import { TypeAppMenu } from './types';
 const menuArr: TypeAppMenu[] = [
   {
     title: 'About',
-    link: AppRoute.HOME_PAGE,
+    link: AppRoute.HOME,
     icon: <BsPerson size={20} />,
   },
   {
     title: 'Blog',
-    link: AppRoute.BLOG_PAGE,
+    link: AppRoute.BLOG,
     icon: <BsPencil size={20} />,
   },
   {
     title: 'Tags',
-    link: AppRoute.TAGS_PAGE,
+    link: AppRoute.TAGS,
     icon: <BsTag size={20} />,
   },
   {
     title: 'My service',
-    link: AppRoute.SERVICE_PAGE,
+    link: AppRoute.SERVICE,
     icon: <GiConvergenceTarget size={20} />,
   },
 ];

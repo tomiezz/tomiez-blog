@@ -13,11 +13,14 @@ const useStyles = createUseStyles({
   },
 });
 
+const title = 'About';
+const description = 'About page of tomiez.com';
+
 const AboutPage = () => {
   const classes = useStyles();
   return (
     <BaseLayout>
-      <SEO title="About" description="About page of tomiez.com" />
+      <SEO title={title} description={description} />
       <ComingSoon className={classes.comingSoonWrap} />
     </BaseLayout>
   );

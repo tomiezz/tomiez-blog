@@ -1,9 +1,9 @@
 export enum AppRoute {
-  HOME_PAGE = '/',
-  ABOUT_PAGE = '/about',
-  BLOG_PAGE = '/blog',
-  TAGS_PAGE = '/tags',
-  SERVICE_PAGE = '/my-services',
+  HOME = '/',
+  ABOUT = '/about',
+  BLOG = '/blog',
+  TAGS = '/tags',
+  SERVICE = '/my-services',
   NOT_FOUND = '/404',
 }
 

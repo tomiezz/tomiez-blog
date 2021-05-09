@@ -132,6 +132,8 @@ function BaseLayout(props: Props) {
   const { children } = props;
   const classes = useStyles();
   useGlobalStyle();
+  console.log('PROFILE IMAGE: ', ProfileImage);
+
   return (
     <div className={classes.root}>
       <div className={classes.wrapper}>
