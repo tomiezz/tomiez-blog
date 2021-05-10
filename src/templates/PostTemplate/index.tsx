@@ -32,11 +32,7 @@ export default function PostTemplate({ data, ...rest }) {
       />
       <div className={classes.wrapper}>
         <Typography.Title level={3}>{frontmatter.title}</Typography.Title>
-        <Image
-          alt="ok ok"
-          src={frontmatter.cover?.childImageSharp?.fluid?.src}
-          title="ok ok"
-        />
+        <Image src={frontmatter.cover?.childImageSharp?.fluid?.src} />
         {html && (
           <div
             className="blog-post-content"

@@ -40,3 +40,11 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
     });
   });
 };
+
+exports.onCreateWebpackConfig = ({ stage, actions }) => {
+  if (stage === `build-javascript`) {
+    actions.setWebpackConfig({
+      devtool: false,
+    });
+  }
+};
