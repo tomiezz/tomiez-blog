@@ -32,6 +32,13 @@ module.exports = {
         path: `${__dirname}/content`,
       },
     },
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        name: `pages`,
+        path: `${__dirname}/src/pages`,
+      },
+    },
     `gatsby-plugin-image`,
     `gatsby-plugin-react-helmet`,
     {
@@ -77,6 +84,14 @@ module.exports = {
         components: path.join(__dirname, 'src/components'),
         images: path.join(__dirname, 'src/images'),
         utils: path.join(__dirname, 'src/utils'),
+      },
+    },
+    {
+      resolve: `gatsby-plugin-mdx`,
+      options: {
+        defaultLayouts: {
+          default: path.join(__dirname, 'src/components/BaseLayout'),
+        },
       },
     },
     // this (optional) plugin enables Progressive Web App + Offline functionality
