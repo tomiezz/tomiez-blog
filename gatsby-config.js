@@ -68,7 +68,7 @@ module.exports = {
       resolve: `gatsby-plugin-manifest`,
       options: {
         name: `Tomiez blog`,
-        short_name: `Tomiez.com`,
+        short_name: `Tomiez`,
         start_url: `/`,
         background_color: `#6E7582`,
         theme_color: `#333333`,
