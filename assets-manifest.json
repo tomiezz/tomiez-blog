@@ -1,5 +1,6 @@
 {
   "main.js": "render-page.js",
   "render-page.js.map": "render-page.js.map",
-  "static/profile-image.png": "static/profile-image-9747bd33b691dc655d2dca837e8c7fb6.png"
+  "static/profile-image.png": "static/profile-image-9747bd33b691dc655d2dca837e8c7fb6.png",
+  "static/site-image.png": "static/site-image-99429882f58893541cb84c87d96b2b90.png"
 }
