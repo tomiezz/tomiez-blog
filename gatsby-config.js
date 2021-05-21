@@ -70,7 +70,7 @@ module.exports = {
         name: `Tomiez blog`,
         short_name: `Tomiez.com`,
         start_url: `/`,
-        background_color: `#333333`,
+        background_color: `#6E7582`,
         theme_color: `#333333`,
         display: `fullscreen`,
         icon: `./static/site-image.png`, // This path is relative to the root of the site.
