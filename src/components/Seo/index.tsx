@@ -11,6 +11,7 @@ import { Helmet } from 'react-helmet';
 import { useLocation } from '@reach/router';
 import { useStaticQuery, graphql } from 'gatsby';
 import { getBlogpostJsonSchema, getBreadcrumbJsonSchema } from 'utils/json-ld';
+import favicon from 'images/site-image.png';
 
 import SiteMetadataConfig from '../../../site-metadata';
 
@@ -64,7 +65,7 @@ function SEO(props: Props) {
     ...datetimeInfo,
   };
 
-  const canonical = pathname ? `${siteUrl}${pathname}` : null;
+  const canonical = pathname ? `${siteUrl}${pathname}` : undefined;
 
   const defaultJsonLD = JSON.stringify([
     getBlogpostJsonSchema(seo),
@@ -80,16 +81,13 @@ function SEO(props: Props) {
       }}
       title={title}
       titleTemplate={siteTitleTemplate}
-      link={
-        canonical
-          ? [
-              {
-                rel: 'canonical',
-                href: canonical,
-              },
-            ]
-          : []
-      }
+      link={[
+        {
+          rel: 'canonical',
+          href: canonical,
+        },
+        { rel: 'shortcut icon', type: 'image/png', href: `${favicon}` },
+      ]}
     >
       {/* General tags */}
       <meta name="description" content={seo.description} />
